@@ -29,4 +29,9 @@ class ProductServiceTest {
 
         assertEquals(result.size(), 1);
     }
+
+    @Test
+    void getProductsByName() {
+        // TODO implement test
+    }
 }

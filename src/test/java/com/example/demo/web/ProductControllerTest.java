@@ -33,12 +33,12 @@ class ProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json(
                         """
-                                    [{
-                                      "id": 1,
-                                      "productName": "P1",
-                                      "status": "ACTIVE"
-                                    }]
-                                    """
+                                [{
+                                  "id": 1,
+                                  "productName": "P1",
+                                  "status": "ACTIVE"
+                                }]
+                                """
                 ));
     }
 }
