@@ -39,9 +39,9 @@ class DemoApplicationTests {
     @Test
     void testGetProductsByName() throws Exception {
         MvcTestResult result =
-                this.mockMvc.get().uri("/products/query").param("name", "Fancy Product 2").accept(MediaType.APPLICATION_JSON).exchange();
+                this.mockMvc.get().uri("/products/query").param("name", "Product2").accept(MediaType.APPLICATION_JSON).exchange();
         assertThat(result).hasStatus(HttpStatus.OK).bodyJson().convertTo(InstanceOfAssertFactories.list(ProductApiDto.class)).hasSize(1).element(0)
-                .isEqualTo(new ProductApiDto(2L, "Fancy Product 2", "ACTIVE"));
+                .isEqualTo(new ProductApiDto(2L, "Product2", "ACTIVE"));
     }
 
 

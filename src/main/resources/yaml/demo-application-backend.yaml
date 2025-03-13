@@ -1,0 +1,75 @@
+---
+openapi: 3.0.3
+info:
+  title: demo-application-backend
+  description: Backend for managing Products and Parts
+  contact:
+    name: TDBP
+    email: tdbp@wuestenrot.at
+  version: 1.0.0-SNAPSHOT
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: Product
+    description: Operations related to a Product
+paths:
+  /products:
+    get:
+      tags:
+        - Product
+      summary: Get all products
+      description: Retrieves all products
+      operationId: getProducts
+      responses:
+        "200":
+          description: Returns a list of all Products
+          content:
+            appliation/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: Internal Server Error
+  /products/{id}:
+    delete:
+      tags:
+        - Product
+      summary: Delete a product
+      description: Deletes a product. If the product does not exist, the error is silently ignored.
+      operationId: deleteProduct
+      parameters:
+        - name: id
+          in: path
+          description: The id of the product
+          example: 1
+          schema:
+            type: number
+            format: int64
+      responses:
+        "200":
+          description: The product was deleted
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    Product:
+      type: object
+      description: A Product containing an ID, a product-name and the product-type.
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+        productName:
+          type: string
+          example: Container
+        status:
+          type: string
+          enum:
+            - ACTIVE
+            - INACTIVE
+            - IN_DESIGN
+          example:
+      required:
+        - id
+        - productName
+        - status

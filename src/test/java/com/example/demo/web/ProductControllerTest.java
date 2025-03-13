@@ -26,7 +26,7 @@ class ProductControllerTest {
 
     @Test
     void getAllProducts() throws Exception {
-        List<Product> list = List.of(new Product(1L, "P1", "ACTIVE"));
+        List<Product> list = List.of(new Product(1L, "P1", "ACTIVE"), new Product(2L, "P2", "INACTIVE"));
         when(productService.getAllProducts()).thenReturn(list);
 
         this.mockMvc.perform(get("/products"))
@@ -37,6 +37,11 @@ class ProductControllerTest {
                                   "id": 1,
                                   "productName": "P1",
                                   "status": "ACTIVE"
+                                },
+                                {
+                                  "id": 2,
+                                  "productName": "P2",
+                                  "status": "INACTIVE"
                                 }]
                                 """
                 ));

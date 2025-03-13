@@ -1,7 +1,9 @@
 package com.example.demo.persistence;
 
-import jakarta.persistence.Entity;
 
+/**
+ * Entity-class for persisting a Part.
+ */
 // TODO additional annotations
 public class PartEntity {
 

@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entity-class for persisting a product.
+ */
 @Entity
 @Table(name = "PRODUCT")
 @Getter
@@ -21,6 +24,7 @@ public class ProductEntity
     @Column(name = "PRODUCTNAME")
     private String productName;
 
+    // can be "ACTIVE", "INACTIVE", "IN_DESIGN"
     @Column(name = "STATUS")
     private String status;
 }

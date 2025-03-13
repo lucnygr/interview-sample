@@ -4,4 +4,4 @@ CREATE TABLE PRODUCT (
    status VARCHAR(255) NOT NULL
 );
 
-INSERT INTO PRODUCT VALUES (1, 'Fancy Product 1', 'INACTIVE'), (2, 'Fancy Product 2', 'ACTIVE'), (3, 'Fancy Product 3', 'IN_CREATION')
+INSERT INTO PRODUCT VALUES (1, 'Product1', 'INACTIVE'), (2, 'Product2', 'ACTIVE'), (3, 'Product3', 'IN_DESIGN');
