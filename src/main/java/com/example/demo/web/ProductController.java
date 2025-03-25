@@ -25,9 +25,8 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping
-    @RequestMapping("/query")
-    public ResponseEntity<List<ProductApiDto>> getProductsByName(@RequestParam("productName") String name) {
+    // TODO implement endpoint to load Products by name
+    public ResponseEntity<List<ProductApiDto>> getProductsByName() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 

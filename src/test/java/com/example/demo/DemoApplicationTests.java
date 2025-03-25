@@ -29,7 +29,6 @@ class DemoApplicationTests {
                 List.of(wac.getBean(AbstractJackson2HttpMessageConverter.class)));
     }
 
-
     @Test
     void testGetAllProducts() throws Exception {
         MvcTestResult result = this.mockMvc.get().uri("/products").accept(MediaType.APPLICATION_JSON).exchange();
@@ -39,7 +38,7 @@ class DemoApplicationTests {
     @Test
     void testGetProductsByName() throws Exception {
         MvcTestResult result =
-                this.mockMvc.get().uri("/products/query").param("name", "Product2").accept(MediaType.APPLICATION_JSON).exchange();
+                this.mockMvc.get().uri("/products/query").param("productName", "Product2").accept(MediaType.APPLICATION_JSON).exchange();
         assertThat(result).hasStatus(HttpStatus.OK).bodyJson().convertTo(InstanceOfAssertFactories.list(ProductApiDto.class)).hasSize(1).element(0)
                 .isEqualTo(new ProductApiDto(2L, "Product2", "ACTIVE"));
     }
